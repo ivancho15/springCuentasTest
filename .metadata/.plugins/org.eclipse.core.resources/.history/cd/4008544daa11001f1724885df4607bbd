@@ -1,0 +1,27 @@
+package com.bolsadeideas.springboot.app.models.services;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.bolsadeideas.springboot.app.models.dao.IRepoorts;
+import com.bolsadeideas.springboot.app.models.reports.ReporteEstadoDeCuenta;
+
+@Service
+public class ReporteServicesImpl implements IReporteServices {
+
+	@Autowired 
+	private IRepoorts reportServices;
+	
+	@Override
+	public List<ReporteEstadoDeCuenta> findMovimientosByDateBetweenAndClienteId(Date date, Date date2, Long id) {
+	
+		List<ReporteEstadoDeCuenta> reporte = reportServices.findMovimientosByDateBetweenAndClienteId( date, date2);   
+		return reporte;
+	}
+
+
+
+}

@@ -1,0 +1,22 @@
+package com.bolsadeideas.springboot.app.models.dao;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.bolsadeideas.springboot.app.models.entity.Movimiento;
+import com.bolsadeideas.springboot.app.models.reports.ReporteEstadoDeCuenta;
+
+@Repository
+public interface IRepoorts extends JpaRepository<Movimiento, Long> {
+	    
+	@Query("SELECT m.fecha as fecha,"
+			+ "m.tipo as tipoMovimiento, m.valor as movimiento, "
+			+ "m.saldo as saldoDisponible "
+			+ "FROM Movimiento m WHERE m.fecha BETWEEN ?2 AND ?3")
+	
+    List<ReporteEstadoDeCuenta> findMovimientosByDateBetweenAndClienteId(Long id, Date date, Date date2);
+}

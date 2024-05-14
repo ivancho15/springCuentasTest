@@ -1,0 +1,19 @@
+package com.bolsadeideas.springboot.app.models.services;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class IClienteServicesTest {
+
+	@BeforeEach
+	void setUp() throws Exception {
+	}
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}

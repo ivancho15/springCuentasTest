@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 7 resources" deleteContents="false" description="Delete 7 resources" element1="/spring-boot-backend-apirest" element2="/srping-boot-data-jpa" element3="/srping-boot-di" element4="/srping-boot-error" element5="/srping-boot-form" element6="/srping-boot-horario" element7="/srping-boot-web" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="7" stamp="1715577416960"/>
+</session>

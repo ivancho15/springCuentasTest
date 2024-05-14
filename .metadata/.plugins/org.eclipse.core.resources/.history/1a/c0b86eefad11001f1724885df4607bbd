@@ -1,0 +1,13 @@
+package com.bolsadeideas.springboot.app.models.services;
+
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
+
+import com.bolsadeideas.springboot.app.models.reports.ReporteEstadoDeCuenta;
+
+public interface IReporteServices {
+	
+	List<ReporteEstadoDeCuenta> findMovimientosByDateBetweenAndClienteId(LocalDate date, LocalDate date2);
+
+}

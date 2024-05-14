@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  spring-boot-backend-technical-test:
+    build: backend-technical-test
+    mem_limit: 512m
+    ports:
+      - "8080:8080"
+    environment:
+      DB_URL:  jdbc:mysql://mysql_container/db_springboot_backend_technical_test?useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
+      DB_USER_NAME: root
+      DB_PASSWORD: 628415
+    restart: always
+    depends_on:
+      mysql_container:
+          condition: service_healthy
+  mysql_container:
+    image: mysql:8.0.3 
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 628415
+      MYSQL_PASSWORD: 628415
+      MYSQL_DATABASE: db_springboot_backend_technical_test
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 10

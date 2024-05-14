@@ -1,0 +1,18 @@
+package com.bolsadeideas.springboot.app.models.dao;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.bolsadeideas.springboot.app.models.entity.Movimiento;
+import com.bolsadeideas.springboot.app.models.reports.ReporteEstadoDeCuenta;
+
+@Repository
+public interface IRepoorts extends JpaRepository<Movimiento, Long> {
+	    
+	@Query("SELECT m.fecha  FROM Movimiento m INNER JOIN Cuenta c INNER JOIN Cliente cl WHERE cl.id =?3)
+    List<ReporteEstadoDeCuenta> findMovimientosByDateBetweenAndClienteId(Long id, Date date, Date date2);
+}

@@ -1,0 +1,39 @@
+package com.bolsadeideas.springboot.app.models.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.bolsadeideas.springboot.app.models.dao.ICuentaDao;
+import com.bolsadeideas.springboot.app.models.entity.Cuenta;
+
+public class CuentaServicesImpl implements ICuentaServices {
+
+	@Autowired 
+	private ICuentaDao cuentaDao;
+
+
+	@Override
+	public List<Cuenta> findAll() {
+		return (List<Cuenta>)cuentaDao.findAll();
+	}
+
+	@Override
+	public Cuenta save(Cuenta cuenta) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Cuenta findById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

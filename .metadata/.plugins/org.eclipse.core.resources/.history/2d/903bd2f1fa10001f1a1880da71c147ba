@@ -1,0 +1,57 @@
+package com.bolsadeideas.springboot.app.models.entity;
+
+import org.hibernate.annotations.DynamicUpdate;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
+@Entity
+@Table(name="clientes")
+public class Cliente extends Persona{
+	
+	@NotEmpty(message="no puede ser nulo")
+	@NotBlank(message="no puede estar vacio")
+	@Size(min=7, max=12, message="El tamaño tiene que estar entre 2 y 12 caracteres")
+	private String clienteId;
+	
+	@NotEmpty(message="no puede ser nulo")
+	@NotBlank(message="no puede estar vacio")
+	@Size(min=6, max=12, message="El tamaño tiene que estar entre 2 y 12 caracteres")
+	private String password;
+	
+	@NotNull(message="no puede ser nulo")
+	private Boolean estado;
+
+	
+	public String getClienteId() {
+		return clienteId;
+	}
+
+	public void setClienteId(String clienteId) {
+		this.clienteId = clienteId;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Boolean getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Boolean estado) {
+		this.estado = estado;
+	}
+	
+	
+	
+
+}

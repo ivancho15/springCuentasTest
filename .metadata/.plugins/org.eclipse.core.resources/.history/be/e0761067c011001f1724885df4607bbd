@@ -1,0 +1,24 @@
+package com.bolsadeideas.springboot.app.models.dao;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.cglib.core.Local;
+
+@DataJpaTest
+class IClienteDaoTest {
+
+	@Autowired
+	IClienteDao clienteDao;
+	@Autowired
+	TestEntityManager testEntityManager;
+	
+	@BeforeEach
+	void setup() {
+		Local cliente = Cliente cliente()
+			
+				
+	}
+	
+}

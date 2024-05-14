@@ -1,0 +1,44 @@
+package com.bolsadeideas.springboot.app.models.dao;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Optional;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+
+import com.bolsadeideas.springboot.app.models.entity.Cliente;
+
+@DataJpaTest
+class ICuentaDaoTest {
+
+	@Autowired
+	private IClienteDao clienteDao;
+	
+	@Autowired
+	TestEntityManager testEntityManager;
+	
+	@BeforeEach
+	void setUp() throws Exception {
+		Cliente localCliente = new Cliente();
+		localCliente.setApellido("Marcano");
+		localCliente.setNombre("Ivan");
+		localCliente.setDireccion("Mi Casa");
+		localCliente.setEmail("ijmm15@gmail.com");
+		localCliente.setClienteId("1758627564");
+		localCliente.setPassword("jajaja2024");
+		localCliente.setEdad(40);
+		localCliente.setTelefono("0963978451");
+		testEntityManager.persist(localCliente);
+	}
+
+	@Test
+	void testFindByClienteIdFound() {
+		Optional<Cliente> cliente  = clienteDao.findClienteByclienteId("1758627564");
+		assertEquals(cliente.get().getClienteId(), "1758627564");
+	}
+
+}

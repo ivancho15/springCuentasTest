@@ -1,0 +1,33 @@
+package com.bolsadeideas.springboot.app.models.services;
+
+import java.util.List;
+
+import com.bolsadeideas.springboot.app.models.entity.Cuenta;
+
+public class CuentaServicesImpl implements ICuentaServices {
+
+	@Override
+	public List<Cuenta> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Cuenta save(Cuenta cuenta) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Cuenta findById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

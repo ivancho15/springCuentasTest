@@ -1,0 +1,45 @@
+package com.bolsadeideas.springboot.app.models.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
+
+@Entity
+@Table(name="clientes")
+public class Cliente extends Persona{
+	
+	@NotEmpty(message="no puede ser nulo")
+	private String clienteId;
+	
+	private String password;
+	
+	private Boolean estado;
+
+	public String getClienteId() {
+		return clienteId;
+	}
+
+	public void setClienteId(String clienteId) {
+		this.clienteId = clienteId;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Boolean getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Boolean estado) {
+		this.estado = estado;
+	}
+	
+	
+	
+
+}

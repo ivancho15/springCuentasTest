@@ -1,0 +1,32 @@
+package com.bolsadeideas.springboot.app.models.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
+
+@Entity
+@Table(name="movimientos")
+public class Movimiento {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id_movimiento;
+	
+	@Column(name="tipo_movimiento")
+	private String tipo;
+	
+	private Double saldo;
+	
+	private Double valor;
+	
+	private Date fecha;
+	
+	@NotNull
+	private Cuenta cuenta;
+	
+
+}

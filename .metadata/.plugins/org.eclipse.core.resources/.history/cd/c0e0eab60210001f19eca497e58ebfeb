@@ -1,0 +1,29 @@
+package com.bolsadeideas.springboot.app.models.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
+
+@Entity
+@Table(name="cuentas")
+public class Cuenta {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long nro_cuenta;
+	
+	@NotEmpty(message = "no puede ser vacio")
+	private String tipo;
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Rerun ICuentaDaoTest" project="backend-technical-test" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.bolsadeideas.springboot.app.models.dao.ICuentaDaoTest" time="0.614" displayname="ICuentaDaoTest" uniqueid="[engine:junit-jupiter]/[class:com.bolsadeideas.springboot.app.models.dao.ICuentaDaoTest]">
+    <testcase name="testFindByClienteIdFound" classname="com.bolsadeideas.springboot.app.models.dao.ICuentaDaoTest" time="0.601" displayname="testFindByClienteIdFound()" uniqueid="[engine:junit-jupiter]/[class:com.bolsadeideas.springboot.app.models.dao.ICuentaDaoTest]/[method:testFindByClienteIdFound()]"/>
+    <testcase name="testFindByClienteIdNotFound" classname="com.bolsadeideas.springboot.app.models.dao.ICuentaDaoTest" time="0.012" displayname="testFindByClienteIdNotFound()" uniqueid="[engine:junit-jupiter]/[class:com.bolsadeideas.springboot.app.models.dao.ICuentaDaoTest]/[method:testFindByClienteIdNotFound()]"/>
+  </testsuite>
+</testrun>

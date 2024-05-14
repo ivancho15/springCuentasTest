@@ -1,0 +1,58 @@
+package com.bolsadeideas.springboot.app.models.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
+@Entity
+@Table(name="clientes")
+public class Cliente  extends Persona{
+
+	private static final long serialVersionUID = 1L;
+	
+	@NotEmpty(message = "no puede ser vacio")
+	@Size(min=8, max=10, message="El tamaño tiene que estar entre 6 y 12 caracteres")
+	@Column(nullable=false)
+	private String password;
+	
+	@Column(name="clienteID")
+	private String clienteId;
+	
+	private Boolean estado;
+	
+	public Cliente() {
+		super();
+	}
+
+	public String getClinteId() {
+		return clienteId;
+	}	
+
+	public void setClinteId(String clienteId) {
+		this.clienteId = clienteId;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Boolean getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Boolean estado) {
+		this.estado = estado;
+	}
+	
+	
+	
+	
+	
+
+}
